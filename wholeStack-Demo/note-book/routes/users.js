@@ -46,10 +46,38 @@ router.post('/userRegister', async (ctx, next) => {
     } else {
       await UserService.insertUser([user.username, user.password])
           .then(res => {
-            console.log(res)
+            // console.log(res)
+            let r = ''
+            if(res.affectedRows !== 0) {
+              r = 'ok'
+              ctx.body = {
+                code: '80000',
+                data: r,
+                mess: '注册成功',
+              }
+            } else {
+              r = 'error'
+              ctx.body = {
+                code: '80004',
+                data: r,
+                mess: '注册失败'
+              }
+            }
+          })
+          .catch(err => {
+            ctx.body = {
+              code: '80002',
+              data: err
+            }
           })
     }
   })
+      .catch(err => {
+        ctx.body = {
+          code: '80002',
+          data: err
+        }
+      })
 })
 
 

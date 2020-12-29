@@ -39,7 +39,7 @@
                 console.log('登录')
             },
             register() {
-                console.log('注册被点击了')
+                // console.log('注册被点击了')
                 this.$http({
                     method: 'post',
                     url: this.$util.baseUrl + '/users/userRegister',
@@ -47,12 +47,17 @@
                         username: this.username.trim(),
                         userpwd: this.password.trim()
                     }
+                }).then(res => {
+                    console.log(res)
+                    if(res.data.code === '80000'){
+                        this.$toast(res.data.mess)
+                    }
                 })
-                console.log('注册')
+                // console.log('注册')
             }
         },
         watch: {
-            username(newId, oldId) {
+            username(newId) {
                 console.log(newId)
             }
         }

@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/.deploy_git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/hexo-theme-shoka" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/themes/hexo-theme-shoka" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/themes/shoka" vcs="Git" />
   </component>
 </project>
